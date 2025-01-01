@@ -1,0 +1,39 @@
+// TASK-2-STUDENT-GRADE-CALCULATOR
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+    System.out.print("Welcome to the student grade calculator \n");
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter the number of subjects: ");
+    int n = scanner.nextInt();
+    int totalMarks = 0;
+
+    for(int i = 0; i < n; i++){
+        System.out.println("Enter marks for subject number " + (i+1) + ":");
+        int marks = scanner.nextInt();
+        totalMarks += marks;
+    }
+    double avgPercentage = totalMarks/n;
+    System.out.println("Your total mark is " + totalMarks + ".");
+    System.out.printf("Your average percentage is %.2f%%\n", avgPercentage);
+    
+    if (avgPercentage >= 90){
+        System.out.println("Your grade is O");
+    }else if (avgPercentage >= 80 && avgPercentage < 90){
+        System.out.println("Your grade is A+");
+    }else if (avgPercentage >= 70 && avgPercentage < 80){
+        System.out.println("Your grade is A");
+    }else if (avgPercentage >= 60 && avgPercentage < 70){
+        System.out.println("Your grade is B+");
+    }else if (avgPercentage >= 50 && avgPercentage < 60){
+        System.out.println("Your grade is B");
+    }else if (avgPercentage >= 40 && avgPercentage < 50){
+        System.out.println("Your grade is C");
+    }else {
+        System.out.println("Your grade is F");
+    }   
+    scanner.close();
+    }
+}
